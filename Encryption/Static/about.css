@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    box-sizing: border-box;
+  
+    
+
+  }
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #0c4269;
+    color: white;
+  
+  }
+
+  
+  
+  /* dce4ff / #D67E9F */
+  h1 {
+    font-size: 70px;
+  }
+
+  .h2 {
+    color: #242225;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    text-align: center;
+  }
+  
+  .title {
+    color: #242225;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #0c4269;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  
+  .button:hover {
+    background-color:#fc764f;
+    color: white;
+    text-transform:uppercase;
+
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+    /* Nav Bar */
+
+    a {
+      color: #fc764f;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      display: inline-block;
+      position: relative;
+      font-size: 15px;
+      
+    }
+  
+    
+  li {
+    display: table-cell;
+    position:relative;
+    padding: 15px ;
+    padding-top: 5px;
+    
+  }

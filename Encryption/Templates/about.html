@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="stylea.css"> -->
+   <link rel="stylesheet" type="text/css" href="static\css\about.css">
+
+    <title>About Us</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <nav>
+    <ul>
+    <li><a href="{{ url_for('index') }}">Homepage</a></li>
+    <li><a href="{{ url_for('encryption') }}">Encryption & Decryption</a></li>
+    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+    <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+</ul>
+</nav>
+    <div class="about-section">
+        <h1>About Us Page</h1>
+        <p style="font-size: x-large;">Hi, we're the team that put together this Caesar Cipher for our Software/Data Engineering Course for CGF - Find the link to our personal profiles here!</p>
+      </div>
+      
+      <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        
+        <div class="column">
+<div class="card">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAKlBMVEXMzMzy8vLLy8vr6+vj4+Pa2trR0dH19fXv7+/IyMjo6Ojg4ODW1tbd3d2W3PvKAAAF1ElEQVR4nO2ci3bbIAxAMWDe/v/fnXg4BmynbuzISae7nZ12SWvuBEg8OsYIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAI4uPh6fcfgVv49Rd0OLdslEZMXy9jrVXeDIMetAlfbRNDIgath4z7UhkL7VZBGhCZVfRg1N3NegHOlVKT0PoRk8y39TMOU5YKozO6isnjA/9FMmACIl6YOiTQu4Rz2cfd3cKDxJCEUTozVF0LnIzzI3Q6nz4X6gtCw2H+zSJVRLSOIkHlXCnSK+OHy8TMHrwzdUhiNzMSRNic9a3UHz9oYkgmiEhNNJFjnIWrlvMxymj3qZNzrFIgk+SA6CwR/xB+s8WfPGhguHsxtIkERokMOwWldXnQoDf0KampMNyHJiXCh8ZNiu9WxtbHt2iP2dQfiG1Vo3dDTol6ziRG+JBKmPKbr63URw2aWcSsIgKZpG07pM7Qt9omfRMQW7xHrFJGL9vcHlMiTMCsNeEKIpc6XbO4zING355pYpUySTEs413HD4WcqkzyeLPKtQvMz01wyuQsMRveE6sUEOmqFC2alFgDLjNT+4LOkzNSw3sgJcJ6N4k0IXEpIjtfM5qHsmmyCk8v3LMMgHyhoAAeWmImKbPVNkxWg2qsX8kVTfN3FkWEQ+EY599+edV0tU2a9zRvW38lrKPfHiYOKdHoHY09uVfQ+t27Amk2urLJzzDvlmn/8ftB800ykFKq3RTIJJOYP7vQy8zd9c2R4azIpCoFOl2WMdN4HfC9vElT27u7mc0BMGNKmEVGhyez8SuwtCnwfpmcDlzOikXGXJ0R8vd9uwwPpYaqZLS4+qFIMrFWj81XTWROPBSKIqArf3hAkslDPlwkY2NR5KZeBisyPoVmqh76ugznPq1Ku6ITTYapNNHkBe5pmVJ3glC7usGSYSY95wqZPJtknWYSwZPJu0JheejLMmWDaSi5ankBTyYvcNNW6tluVtUw2t8ikwbNIC6WGXyVedFkeFnGK3aBTFWCj3fIMOYfu0JXjhl1j0zZFbLnI6PmdR6sKuv6Dk+Gq1w5XyCTM3DKM02tiinj0i4325c5vBPBc63fH2cidjNeKhq+K6MO7+VZNjknx84eUYaNabtP2D2ZyQzy6LlR2iBbRRZRJuRBs9PNYEzFTa/je5PrN2LKqLxlD4vlzcjINA7MiR19TJmyRPd2S4YHk88xTb9KOQ6mDM/9TGxHZt5Ohq6mXtwcQJUpO0xqSyZU9ZapbSxbj/SnD0DqZjwNi2GyKxnOqhIFkuFScVmYF9zBOQ5XZhpyRbOWGbvjcllSCGfpHOfY4TiuTBo0sDpcdzPX7arPW2zlRok+lIBQZRgTabc59DJdYMoczZaCTsdPf2wjrgx3abqaepkyM3Q2E0TjcZYZj2Z/mgiQZdKggWa1MnMV3NkMztfXgbQYf7BBlsmZUYR0UWx56IZK6V3tqZp8noGQxwzLIZmayFi5FZjNWIlx/yINuoyV6V/auVpGHT7UjJfOnkxr2DJjapSoIwOBOX7aCcEJu10Nu5upakTnh/LxsEmJjtzradgytpqEy0PdL0/O4375ds5Bl5mWlqeHQmB+faau9bQ5crBllnPnOTJ9IXNMx4WbV5oJu7QoPrSscX6P8evg4MuIRySSzPSaC+BWpTS6TFVTJhn5sow2/qZjwAXVyZy5UdMtsPFl+GOQnJfRzYnGHTKP5p+WSUVrFZwbZEItw14fMzPLpU18mXKENlzRzRLLHe0bZB5pskzNZ210XmHfJOMrGaa8OI+sr7Hgysz7faVqVucp3/gGmXnHZRA2LRvjBbST98z4jTJl0JiLf2ac57vcuN2MlWUATEP29O2/mnLBEFWGV5vk5sILp+VbIcuopXLeu2P+GjfIMHY+Uz4BWebEIuYIyJHZ2lu+Co39Q6g8ePk20P8jirQv8zaQZbZO8QmCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIP53/gHGmTq/TG2J8QAAAABJRU5ErkJggg==" alt="Placeholder" style="width:100%">
+            <div class="container">
+              <h2>Charlotte Emma Whiting</h2>
+              <p class="title">Kent</p>
+              <p><button class="button" onclick="window.location.href='https://github.com/CharEms-W/';">Github</button></p>
+              <p><button class="button" onclick="window.location.href='https://www.linkedin.com/in/charlotte-emma-whiting-5337a368/';">LinkedIn</button></p>
+            </div>
+          </div>
+        </div>           
+
+        <div class="column">
+          <div class="card">
+            <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+            <div class="container">
+              <h2>Abbey W</h2>
+              <p class="title">UK</p>
+              <p><button class="button">Portfolio</button></p>
+              <p><button class="button">Portfolio</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+            <div class="container">
+              <h2>Chloe Allen</h2>
+              <p class="title">LOCATION</p>
+              <p><button class="button">Portfolio</button></p>
+              <p><button class="button">Portfolio</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+            <div class="container">
+              <h2>Adna Abdulkadir</h2>
+              <p class="title">LOCATION</p>
+              <p><button class="button">Portfolio</button></p>
+              <p><button class="button">Portfolio</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+              <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+              <div class="container">
+                <h2>Augustina  Orimoloye</h2>
+                <p class="title">LOCATION</p>
+                <p><button class="button">Portfolio</button></p>
+                <p><button class="button">Portfolio</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+              <div class="container">
+                <h2>Amelia Gibson</h2>
+                <p class="title">LOCATION</p>
+                <p><button class="button">Portfolio</button></p>
+                <p><button class="button">Portfolio</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="data:image/png;base64,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" alt="Placeholder" style="width:100%">
+              <div class="container">
+                <h2>Amy Stanford</h2>
+                <p class="title">LOCATION</p>
+                <p><button class="button" onclick="window.location.href='https://github.com/Amy-Stanford';">Github</button></p>
+                <p><button class="button" onclick="window.location.href='https://linkedin.com/in/amy-stanford-08b646151';">LinkedIn</button></p>
+               
+              </div>
+            </div>
+          </div>
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/encryption.css') }}">
+
+    <title>Encryption & Decryption</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Homepage</a></li>
+            <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+            <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li> 
+    </ul>
+    </nav>
+<div class="about-section">
+<h1>Encryption & Decryption</h1>
+    <p>Welcome to the translator! Want to Encrypt or Decrypt a message? Simply input your message below, chose how many characters you'd like to shift and if you want to Encrypt or Decrypt.</p> 
+</div>  
+
+<div class="container">
+    <div class="translate-box">
+        <div class="translate-header">
+            <div>Input your message below:</div>
+            <div>Result</div>
+        </div>
+        <div class="translate-body">
+            <div class="text-area">
+                <textarea id = "input-text" placeholder="Enter text"></textarea>
+
+                <select id="shift-value" class="Shift"></select>
+                
+                <script>
+                    // Select the dropdown element
+                    const select = document.getElementById('shift-value');
+                    
+                    // Loop from -25 to 25 to create options
+                    for (let i = -25; i <= 25; i++) {
+                        const option = document.createElement('option');
+                        option.value = i; // Set the option value to the current number
+                        option.textContent = `${i} Spaces`; // Set the display text for the option
+                        select.appendChild(option); // Append the option to the dropdown
+                    }
+                </script>
+                
+                <select id="operation" class="Operation">
+                    <option value="encrypt">Encrypt</option>
+                    <option value="decrypt">Decrypt</option>
+                </select>
+            </div>
+            <div class="text-area">
+                <textarea id="output-text" placeholder="Result" disabled></textarea>
+            </div>
+        </div>
+        <div class="translate-footer">
+            <button onclick="processText()">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function caesarCipher(text, shift, operation) {
+        let result = '';
+        shift = operation === 'decrypt' ? -shift : shift;
+
+        for (let i = 0; i < text.length; i++) {
+            let char = text[i];
+            if (char.match(/[a-z]/i)) {
+                let code = text.charCodeAt(i);
+
+                // Uppercase letters
+                if (code >= 65 && code <= 90) {
+                    char = String.fromCharCode(((code - 65 + shift) % 26 + 26) % 26 + 65);
+                }
+                // Lowercase letters
+                else if (code >= 97 && code <= 122) {
+                    char = String.fromCharCode(((code - 97 + shift) % 26 + 26) % 26 + 97);
+                }
+            }
+            result += char;
+        }
+        return result;
+    }
+
+    function processText() {
+        let text = document.getElementById("input-text").value;
+        let shift = parseInt(document.getElementById("shift-value").value);
+        let operation = document.getElementById("operation").value;
+
+        let result = caesarCipher(text, shift, operation);
+        document.getElementById("output-text").value = result;
+    }
+</script>
+</body>
+</html>
