@@ -11,11 +11,22 @@ body {
     box-sizing: inherit;
   }
   
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      gap: 16px;
+      text-align: center;
+    }
+  
   .column {
-    float: left;
+
     width: 25%;
     margin-bottom: 16px;
     padding: 0 8px;
+    box-sizing: border-box;
+    text-align: center;
+  
     
   }
   
@@ -24,8 +35,6 @@ body {
     margin: 8px;
     box-sizing: border-box;
   
-    
-
   }
   .about-section {
     padding: 50px;
@@ -36,7 +45,6 @@ body {
   }
 
   
-  
   /* dce4ff / #D67E9F */
   h1 {
     font-size: 70px;
@@ -46,12 +54,12 @@ body {
     color: #242225;
   }
   
-  .container::after, .row::after {
+  /* .container::after, .row::after {
     content: "";
     clear: both;
     display: table;
     text-align: center;
-  }
+  } */
   
   .title {
     color: #242225;
