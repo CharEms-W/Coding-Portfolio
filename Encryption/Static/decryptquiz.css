@@ -1,0 +1,73 @@
+ /* Nav Bar */
+
+ a {
+    color: #fc764f;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    
+  }
+
+  
+li {
+  display: table-cell;
+  position:relative;
+  padding: 15px ;
+  padding-top: 5px;
+  
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.title-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #0c4269;
+  color: white;
+
+}
+
+h1 {
+  font-size: 70px;
+}
+
+/* Reset some default margins and paddings */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* Panel container to hold the panels */
+.panel-container {
+  display: flex;
+  flex-direction: column; /* Stacks the panels vertically */
+  height: 100vh; /* Full viewport height */
+  padding-top: 15px;
+  padding-bottom: 15px}
+
+.row {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #f0f0f0; /* Adjust as needed */
+  border: 1px solid #ccc;
+}
+
+/* Each panel */
+.panel {
+  flex: 1; /* Each panel takes up equal vertical space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  font-size: 24px;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

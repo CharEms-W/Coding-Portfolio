@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static\css\thankyou.css">
+    <title>Thank You</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Homepage</a></li>
+          <li><a href="{{ url_for('encryption') }}">Encryption & Decryption</a></li>
+          <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+          <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul></nav>
+
+        <div class="title-section">
+            <h1>Thank you for your message!</h1>
+            <p>We hope you enjoyed our site</p>
+          </div>
+</body>
+</html>
